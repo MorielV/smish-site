@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://morielv.github.io/smish-site/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="he" href="https://morielv.github.io/smish-site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morielv.github.io/smish-site/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morielv.github.io/smish-site/en/"/>
+  </url>
+  <url>
+    <loc>https://morielv.github.io/smish-site/en/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="he" href="https://morielv.github.io/smish-site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morielv.github.io/smish-site/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morielv.github.io/smish-site/en/"/>
+  </url>
+  <url><loc>https://morielv.github.io/smish-site/terms.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://morielv.github.io/smish-site/privacy.html</loc><lastmod>2026-08-23</lastmod></url>
+</urlset>

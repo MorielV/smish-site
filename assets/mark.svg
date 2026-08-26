@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Smish">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="50%" r="50%">
+      <stop offset="30%" stop-color="#F6C87A" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#E9A85C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="#2E2A24"/>
+  <!-- a firefly and the path it came by: remembering, not delivering -->
+  <circle cx="17" cy="47" r="2.1" fill="#7FA875" opacity=".38"/>
+  <circle cx="24" cy="41" r="3.0" fill="#9DBE8F" opacity=".58"/>
+  <circle cx="31" cy="34" r="4.2" fill="#E9A85C" opacity=".8"/>
+  <circle cx="40" cy="25" r="16" fill="url(#g)"/>
+  <circle cx="40" cy="25" r="8.2" fill="#F6C87A"/>
+</svg>

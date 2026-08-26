@@ -1,0 +1,382 @@
+/* Smish website — shared styles.
+   Palette mirrors packages/shared/src/theme/tokens.ts (warm sage/terracotta).
+   No build step, no external requests: fonts are system stacks. */
+
+:root {
+  color-scheme: light dark;
+
+  --bg: #FBF8F1;
+  --fg: #2E2A24;
+  --muted: #6B5E48;
+  --surface: #FFFFFF;
+  --surface-sunk: #F5F0E4;
+  --line: #E4DCCB;
+  --line-soft: #EFE8DA;
+  --primary: #5E795A;
+  --primary-ink: #243A22;
+  --primary-wash: #E7EFE3;
+  --accent: #94634F;
+  --accent-wash: #F6DFD5;
+  --gold: #B07B4A;
+
+  --radius: 14px;
+  --radius-lg: 20px;
+  --measure: 42rem;
+  --shadow: 0 1px 2px rgba(46, 42, 36, .05), 0 8px 24px -12px rgba(46, 42, 36, .16);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1C1813;
+    --fg: #EDE6D8;
+    --muted: #B6AB97;
+    --surface: #262019;
+    --surface-sunk: #201B15;
+    --line: #3A3228;
+    --line-soft: #2E2720;
+    --primary: #7FA875;
+    --primary-ink: #DCEBD6;
+    --primary-wash: #324230;
+    --accent: #D9A491;
+    --accent-wash: #523229;
+    --gold: #D9A86A;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -12px rgba(0, 0, 0, .7);
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  text-wrap: pretty;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hebrew pages: prefer faces with real Hebrew coverage, and give the taller
+   Hebrew x-height a little more room. */
+:lang(he) body,
+body:lang(he) {
+  font-family: "Segoe UI", system-ui, -apple-system, "Noto Sans Hebrew",
+               "Arial Hebrew", Arial, sans-serif;
+  line-height: 1.75;
+}
+
+/* ---------- layout ---------- */
+
+.wrap {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding: 1.25rem 1.5rem 5rem;
+}
+
+.wrap--wide { max-width: 48rem; }
+
+main:focus { outline: none; }
+
+/* ---------- skip link ---------- */
+
+.skip {
+  position: absolute;
+  inset-inline-start: 0.75rem;
+  top: -4rem;
+  z-index: 10;
+  padding: .6rem 1rem;
+  background: var(--surface);
+  color: var(--fg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: top 120ms ease;
+}
+.skip:focus { top: .75rem; }
+
+/* ---------- masthead ---------- */
+
+.masthead {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding-block: 1.25rem 3rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-weight: 650;
+  font-size: 1.15rem;
+  letter-spacing: -.01em;
+  color: var(--fg);
+  text-decoration: none;
+}
+.brand img { display: block; width: 32px; height: 32px; border-radius: 9px; }
+
+.masthead nav {
+  margin-inline-start: auto;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .95rem;
+}
+
+.lang-switch {
+  display: inline-block;
+  padding: .3rem .7rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+.lang-switch:hover { color: var(--fg); border-color: var(--muted); }
+
+/* ---------- hero ---------- */
+
+h1 {
+  font-size: clamp(2.1rem, 6.5vw, 3.1rem);
+  line-height: 1.12;
+  letter-spacing: -.025em;
+  margin: 0 0 .8rem;
+  text-wrap: balance;
+}
+
+.lede {
+  font-size: clamp(1.1rem, 2.6vw, 1.3rem);
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0 0 2rem;
+  max-width: 32ch;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: .85rem;
+  font-weight: 650;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 3.5rem 0 1.1rem;
+}
+
+/* Hebrew has no case, so uppercasing a section heading only mangles the Latin
+   brand inside it — "Smish+" became "+SMISH". */
+:lang(he) h2 { letter-spacing: .04em; text-transform: none; font-size: .95rem; }
+:lang(he) h2 bdi { letter-spacing: normal; }
+
+h3 { font-size: 1.05rem; margin: 0 0 .3rem; letter-spacing: -.01em; }
+
+p { margin: 0 0 1.1rem; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--primary); text-underline-offset: .18em; }
+a:hover { color: var(--fg); }
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- the three steps ---------- */
+
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.5rem; }
+
+.steps li {
+  display: grid;
+  grid-template-columns: 1.9rem 1fr;
+  gap: .1rem 1rem;
+  align-items: start;
+}
+
+.steps .n {
+  grid-row: span 2;
+  width: 1.9rem;
+  height: 1.9rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--primary-wash);
+  color: var(--primary-ink);
+  font-size: .85rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  margin-top: .15rem;
+}
+
+.steps p { color: var(--muted); margin: 0; }
+
+/* ---------- cards ---------- */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.note {
+  background: var(--surface-sunk);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  color: var(--muted);
+  font-size: .97rem;
+}
+.note strong { color: var(--fg); }
+
+/* A greeting the way the app shows it — the one visual on the page. */
+.sample {
+  display: grid;
+  gap: .55rem;
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg);
+  padding: 1.3rem 1.45rem;
+  box-shadow: var(--shadow);
+}
+.sample .who {
+  font-size: .8rem;
+  font-weight: 650;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.sample .msg {
+  margin: 0;
+  font-size: 1.12rem;
+  line-height: 1.7;
+}
+.sample .msg--he { direction: rtl; text-align: right; }
+.sample .msg--en { direction: ltr; text-align: left; }
+.sample .meta {
+  font-size: .87rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line-soft);
+  padding-top: .6rem;
+  margin: .2rem 0 0;
+}
+
+/* ---------- store buttons ---------- */
+
+.stores { display: flex; flex-wrap: wrap; gap: .7rem; margin: 0 0 1rem; }
+
+.store {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .7rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--fg);
+  font-size: .97rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.store[aria-disabled="true"] {
+  opacity: .55;
+  cursor: default;
+  pointer-events: none;
+  font-weight: 500;
+}
+
+/* ---------- faq ---------- */
+
+.faq { display: grid; gap: .6rem; }
+
+.faq details {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 0 1.1rem;
+}
+.faq summary {
+  cursor: pointer;
+  padding: .95rem 0;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+";
+  margin-inline-start: auto;
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.faq details[open] summary::after { content: "\2212"; }
+.faq details > p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: .97rem;
+}
+
+/* ---------- footer ---------- */
+
+footer {
+  margin-top: 4.5rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line-soft);
+  color: var(--muted);
+  font-size: .93rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1.25rem;
+  align-items: baseline;
+}
+footer a { color: var(--muted); }
+footer a:hover { color: var(--fg); }
+footer .spacer { margin-inline-start: auto; }
+
+/* ---------- legal pages ---------- */
+
+.legal { max-width: 46rem; }
+.legal h1 { font-size: clamp(1.8rem, 5vw, 2.3rem); margin-bottom: .2rem; }
+.legal h2 {
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--fg);
+  margin: 2.4rem 0 .7rem;
+}
+.legal .updated { color: var(--muted); font-size: .9rem; margin-bottom: 2rem; }
+.legal ul { padding-inline-start: 1.2rem; }
+.legal li { margin-bottom: .5rem; }
+
+.legal table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 0 1.4rem;
+  font-size: .96rem;
+}
+.legal th, .legal td {
+  border: 1px solid var(--line-soft);
+  padding: .7rem .85rem;
+  text-align: start;
+  vertical-align: top;
+}
+.legal th { background: var(--surface-sunk); font-weight: 650; }
+
+/* Tables must scroll inside themselves, never the page. */
+.scroller { overflow-x: auto; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

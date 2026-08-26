@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://morielv.github.io/smish-site/sitemap.xml
