@@ -18,7 +18,9 @@ Plain static HTML, no build step. Served by GitHub Pages from `main`.
 | `privacy.html` | `EXPO_PUBLIC_PRIVACY_URL` |
 | `404.html` | GitHub Pages error page |
 | `assets/site.css` | Every page's styles; palette mirrors `packages/shared/src/theme/tokens.ts` |
-| `assets/site.js` | The hero's firefly canvas and the scroll reveal — vanilla, no dependencies |
+| `assets/site.js` | Theme toggle, scroll reveal, the hero's firefly canvas |
+| `assets/device.css` | The phone, its three screens, and the page's motion |
+| `assets/showcase.js` | The screen tabs, the draft typing itself, the spotlight, the progress bar |
 | `assets/fonts/` | Assistant (OFL), Hebrew + Latin subsets, self-hosted |
 | `assets/mark.svg` | The firefly mark — favicon and masthead |
 | `assets/og*.png` | Link-preview cards, 1200×630, one per language |
@@ -46,10 +48,17 @@ Plain static HTML, no build step. Served by GitHub Pages from `main`.
   without it a reload flashes the wrong theme. The hero, the Smish+ band and
   the footer stay dark in every mode: that night palette is the brand, not
   the theme.
+- **The device is drawn, not photographed.** There are no app screenshots on
+  the site — the phone is CSS and its three screens are real markup, so the
+  greeting is crawlable text and the whole thing restyles with the theme.
+  Swap it for real captures once the UI is final; keep the frame.
 - **Nothing may depend on JavaScript to be readable.** `site.js` adds `.js` to
   the root element before anything else, and only then does CSS hide the
   `.reveal` blocks — if the script fails, every section stays visible. The
-  firefly canvas and the reveal both stand down under `prefers-reduced-motion`.
+  finished greeting is in the markup and the typing animation replays it, so
+  a reader without JS sees the sentence rather than an empty card. The
+  fireflies, the reveal, the typing, the entrance and the progress bar all
+  stand down under `prefers-reduced-motion`.
 - Keep claims honest. Store badges stay `aria-disabled` until the app is
   actually listed, and there is no `aggregateRating` in the structured data
   until there are real ratings to report.

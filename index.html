@@ -38,6 +38,7 @@
 if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
 </script>
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/device.css">
 
 <script type="application/ld+json">
 {
@@ -55,6 +56,8 @@ if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)
 </script>
 </head>
 <body>
+
+<div class="progress" aria-hidden="true"></div>
 
 <a class="skip" href="#main">דלג לתוכן</a>
 
@@ -93,37 +96,104 @@ if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)
 <main id="main" tabindex="-1">
 
   <section class="band band--sunk">
-    <div class="band__inner showcase">
+    <div class="band__inner stage" data-stage>
       <div class="reveal">
         <p class="eyebrow">איך זה נראה</p>
-        <h2 class="section-title">טיוטה שכבר נשמעת כמוכם</h2>
-        <p class="section-lede">Smish לא שולח כלום לבד. הוא מכין ניסוח שמתאים לאדם ולאירוע,
-        אתם עורכים אותו כמה שבא לכם — ורק אז לוחצים "שלח".</p>
-        <p>הברכה נכתבת בעברית או באנגלית, לפי מה שמתאים לכל איש קשר בנפרד,
-        ובסגנון שאתם בוחרים.</p>
+        <h2 class="section-title">הטיוטה נכתבת מול העיניים שלכם</h2>
+        <p class="section-lede">Smish לא שולח כלום לבד. הוא מכין ניסוח שמתאים לאדם ולאירוע, אתם עורכים אותו כמה שבא לכם — ורק אז לוחצים "שלח".</p>
+        <p>הברכה נכתבת בעברית או באנגלית, לפי מה שמתאים לכל איש קשר בנפרד, ובסגנון שאתם בוחרים.</p>
+
+        <div class="tabs" role="tablist" aria-label="מסכי האפליקציה">
+          <button class="tab" role="tab" type="button" id="tab-list" aria-controls="scr-list" aria-selected="true">מי בקרוב</button>
+          <button class="tab" role="tab" type="button" id="tab-draft" aria-controls="scr-draft" aria-selected="false" tabindex="-1">הטיוטה</button>
+          <button class="tab" role="tab" type="button" id="tab-sent" aria-controls="scr-sent" aria-selected="false" tabindex="-1">אחרי השליחה</button>
+        </div>
       </div>
 
-      <div class="phone reveal" aria-hidden="true">
-        <div class="phone__screen">
-          <div class="chat">
-            <p class="chat__day">מחר · יום ההולדת של דנה</p>
+      <div class="device reveal">
+        <div class="device__frame">
+          <span class="device__btn device__btn--silent" aria-hidden="true"></span>
+          <span class="device__btn device__btn--up" aria-hidden="true"></span>
+          <span class="device__btn device__btn--down" aria-hidden="true"></span>
+          <span class="device__btn device__btn--power" aria-hidden="true"></span>
 
-            <div class="bubble bubble--them">
-              תודה רבה!! ❤️
-              <span class="bubble__meta">דנה · בשנה שעברה</span>
+          <div class="device__screen">
+            <span class="device__island" aria-hidden="true"></span>
+
+            <div class="statusbar" aria-hidden="true">
+              <span class="statusbar__time">9:41</span>
+              <span class="statusbar__icons"><svg viewBox="0 0 18 12" fill="currentColor" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><path d="M8 11.2 6.1 9.1a2.9 2.9 0 0 1 3.8 0zM3.6 6.6 2 4.9a8.7 8.7 0 0 1 12 0l-1.6 1.7a6.4 6.4 0 0 0-8.8 0zm1.5 1.6a4.2 4.2 0 0 1 5.8 0L9.4 9.6a2 2 0 0 0-2.8 0z"/></svg><svg viewBox="0 0 26 12" fill="none" aria-hidden="true"><rect x=".6" y=".6" width="21" height="10.8" rx="3.2" stroke="currentColor" stroke-opacity=".45"/><rect x="2.4" y="2.4" width="15" height="7.2" rx="2" fill="currentColor"/><path d="M23.4 4.2v3.6a2 2 0 0 0 0-3.6z" fill="currentColor" fill-opacity=".45"/></svg></span>
             </div>
 
-            <div class="draft">
-              <p class="draft__label"><span class="spark"></span>טיוטה</p>
-              <p>דנה, מזל טוב! שתהיה לך שנה שקטה וטובה, ובעיקר שיהיה לך זמן
-              ליהנות ממנה. מתגעגע, בקרוב נשב.</p>
-              <div class="draft__actions">
-                <span class="pill">ניסוח</span>
-                <span class="pill">עריכה</span>
-                <span class="pill pill--go">שליחה</span>
+            <div class="screens">
+
+              <div class="screen is-active" data-screen="list" role="tabpanel" id="scr-list" aria-labelledby="tab-list">
+                <p class="screen__title">השבוע</p>
+                <p class="screen__sub">שלושה אנשים, לפי מה שקרוב</p>
+            <div class="row row--due">
+              <span class="row__av" aria-hidden="true">ד</span>
+              <span class="row__body"><span class="row__name">דנה גל</span><span class="row__meta">יום הולדת</span></span>
+              <span class="row__when">מחר</span>
+            </div>
+            <div class="row">
+              <span class="row__av row__av--warm" aria-hidden="true">א</span>
+              <span class="row__body"><span class="row__name">אבא</span><span class="row__meta">יום נישואין</span></span>
+              <span class="row__when">בעוד 4 ימים</span>
+            </div>
+            <div class="row">
+              <span class="row__av" aria-hidden="true">מ</span>
+              <span class="row__body"><span class="row__name">מיכל ברק</span><span class="row__meta">ראש השנה</span></span>
+              <span class="row__when">בעוד שבועיים</span>
+            </div>
+
+            <p class="screen__divider">כל השאר</p>
+            <div class="row">
+              <span class="row__av" aria-hidden="true">ר</span>
+              <span class="row__body"><span class="row__name">רונן</span><span class="row__meta">יום הולדת</span></span>
+              <span class="row__when">בעוד 3 שבועות</span>
+            </div>
+            <div class="row">
+              <span class="row__av row__av--warm" aria-hidden="true">ש</span>
+              <span class="row__body"><span class="row__name">שירה מהצוות</span><span class="row__meta">דירה חדשה</span></span>
+              <span class="row__when">בעוד חודש</span>
+            </div>
               </div>
+
+              <div class="screen" data-screen="draft" role="tabpanel" id="scr-draft" aria-labelledby="tab-draft">
+                <p class="screen__title">דנה גל</p>
+                <p class="screen__sub">יום הולדת · מחר</p>
+                <div class="draft-card">
+                  <p class="draft-card__label"><span class="spark" aria-hidden="true"></span>טיוטה</p>
+                  <p class="typed">דנה, מזל טוב! שתהיה לך שנה שקטה וטובה, ובעיקר שיהיה לך זמן ליהנות ממנה. מתגעגע, בקרוב נשב.</p>
+                  <div class="acts">
+                    <span class="act">ניסוח</span>
+                    <span class="act">עריכה</span>
+                    <span class="act act--go">שליחה</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="screen" data-screen="sent" role="tabpanel" id="scr-sent" aria-labelledby="tab-sent">
+                <p class="screen__title">דנה גל</p>
+                <p class="screen__sub">וואטסאפ</p>
+                <div class="thread">
+                  <p class="msg msg--out">דנה, מזל טוב! שתהיה לך שנה שקטה וטובה, ובעיקר שיהיה לך זמן ליהנות ממנה.<span class="msg__tick">9:41 ✓✓</span></p>
+                  <p class="msg msg--in">תודה רבה!! ❤️</p>
+                  <span class="toast">נשמר בהיסטוריה</span>
+                </div>
+              </div>
+
             </div>
+
+            <nav class="tabbar" aria-hidden="true">
+              <span class="is-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 19v-1.6a3.4 3.4 0 0 0-3.4-3.4H6.4A3.4 3.4 0 0 0 3 17.4V19"/><circle cx="9.5" cy="7.5" r="3.5"/><path d="M21 19v-1.6a3.4 3.4 0 0 0-2.6-3.3M15.5 4.2a3.5 3.5 0 0 1 0 6.6"/></svg>אנשים</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>הוספה</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 7.9 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H2a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 4.6 7.9a1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H9a1.6 1.6 0 0 0 1-1.5V2a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg>הגדרות</span>
+            </nav>
+            <span class="tabbar__home" aria-hidden="true"></span>
           </div>
+
+          <span class="device__glare" aria-hidden="true"></span>
         </div>
       </div>
     </div>
@@ -136,17 +206,17 @@ if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)
         <h2 class="section-title">שלושה שלבים, פעם בשנה לכל אדם</h2>
       </div>
       <ol class="steps">
-        <li class="reveal">
+        <li class="reveal spot">
           <span class="n" aria-hidden="true">1</span>
           <h3>מוסיפים אנשים</h3>
           <p>מייבאים מאנשי הקשר או מוסיפים ביד, עם התאריכים שחשובים להם.</p>
         </li>
-        <li class="reveal">
+        <li class="reveal spot">
           <span class="n" aria-hidden="true">2</span>
           <h3>מקבלים תזכורת</h3>
           <p>כמה ימים מראש, לא בבוקר של היום עצמו — שיישאר זמן לחשוב מה להגיד.</p>
         </li>
-        <li class="reveal">
+        <li class="reveal spot">
           <span class="n" aria-hidden="true">3</span>
           <h3>שולחים בקול שלכם</h3>
           <p>עורכים את הטיוטה, ושולחים מוואטסאפ, טלגרם או SMS.</p>
@@ -184,7 +254,7 @@ if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)
         מספר האנשים שאפשר לעקוב אחריהם.</p>
       </div>
 
-      <div class="plan">
+      <div class="plan spot">
         <h3><bdi>Smish+</bdi></h3>
         <p class="plan__sub">מסיר את שתי המגבלות.</p>
         <ul>
@@ -268,5 +338,6 @@ if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)
 </footer>
 
 <script src="assets/site.js" defer></script>
+<script src="assets/showcase.js" defer></script>
 </body>
 </html>
