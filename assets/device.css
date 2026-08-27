@@ -1,0 +1,454 @@
+/* The device showcase: a phone that actually looks like a phone, three
+   switchable screens, and the effects that carry the page.
+   Loaded after site.css; every motion here is disabled by the
+   prefers-reduced-motion block at the end. */
+
+/* ---------- scroll progress ---------- */
+
+.progress {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 30;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ember-deep), var(--ember));
+  transform: scaleX(0);
+  transform-origin: left center;
+  will-change: transform;
+  pointer-events: none;
+}
+[dir="rtl"] .progress { transform-origin: right center; }
+
+/* ---------- hero entrance ---------- */
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
+}
+html.js .hero__inner > * { animation: rise .85s cubic-bezier(.2, .7, 0, 1) backwards; }
+html.js .hero__badge  { animation-delay: .05s; }
+html.js .hero h1      { animation-delay: .14s; }
+html.js .hero__lede   { animation-delay: .24s; }
+html.js .hero .stores { animation-delay: .34s; }
+
+/* The gradient sweeps across the highlighted words once, on arrival. */
+@keyframes sweep { to { background-position: 200% 0; } }
+html.js .glow {
+  background: linear-gradient(105deg,
+    var(--ember) 0%, #FFE7B8 25%, var(--ember-deep) 50%,
+    var(--ember) 75%, var(--ember-deep) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: sweep 2.6s cubic-bezier(.4, 0, .2, 1) .7s both;
+}
+
+/* ---------- pointer spotlight on cards ---------- */
+
+.spot { position: relative; isolation: isolate; }
+.spot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 260ms ease;
+  background: radial-gradient(
+    16rem circle at var(--mx, 50%) var(--my, 0%),
+    color-mix(in srgb, var(--primary) 13%, transparent),
+    transparent 68%);
+}
+.spot:hover::before { opacity: 1; }
+.band--night .spot::before {
+  background: radial-gradient(
+    18rem circle at var(--mx, 50%) var(--my, 0%),
+    rgba(246, 200, 122, .12), transparent 66%);
+}
+
+/* ---------- the showcase ---------- */
+
+.stage { display: grid; gap: clamp(2rem, 5vw, 3.5rem); align-items: center; }
+@media (min-width: 58rem) {
+  .stage { grid-template-columns: minmax(0, 1fr) auto; }
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+.tab {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font: inherit;
+  font-size: .93rem;
+  font-weight: 650;
+  padding: .5rem 1.05rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+.tab:hover { color: var(--fg); }
+.tab[aria-selected="true"] {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+/* ---------- the device ---------- */
+
+.device {
+  --w: 300px;
+  --bezel: 12px;
+  width: var(--w);
+  margin-inline: auto;
+  position: relative;
+  perspective: 1400px;
+}
+
+.device__frame {
+  position: relative;
+  padding: var(--bezel);
+  border-radius: 48px;
+  background:
+    linear-gradient(150deg, #574E41 0%, #241F19 28%, #17130F 62%, #443C32 100%);
+  box-shadow:
+    var(--shadow-lg),
+    0 0 0 1px rgba(243, 236, 223, .10),
+    inset 0 0 0 1px rgba(243, 236, 223, .20),
+    inset 0 1px 1px rgba(243, 236, 223, .30);
+  transition: transform 500ms cubic-bezier(.2, .7, 0, 1);
+  transform-style: preserve-3d;
+}
+html.js .device:hover .device__frame { transform: translateY(-6px) rotateX(2deg); }
+
+/* side buttons, so the silhouette reads as hardware rather than a rectangle */
+.device__btn {
+  position: absolute;
+  width: 3px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #4A4237, #2A241E);
+}
+.device__btn--silent { inset-inline-start: -3px; top: 92px;  height: 26px; }
+.device__btn--up     { inset-inline-start: -3px; top: 134px; height: 46px; }
+.device__btn--down   { inset-inline-start: -3px; top: 190px; height: 46px; }
+.device__btn--power  { inset-inline-end: -3px;   top: 158px; height: 68px; }
+
+.device__screen {
+  position: relative;
+  border-radius: 37px;
+  background: var(--bg);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .35);
+  overflow: hidden;
+  aspect-ratio: 9 / 19.5;
+  display: flex;
+  flex-direction: column;
+}
+
+.device__island {
+  position: absolute;
+  top: 9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 78px;
+  height: 24px;
+  border-radius: 999px;
+  background: #0C0A08;
+  z-index: 4;
+}
+
+/* a single soft diagonal reflection across the glass */
+.device__glare {
+  position: absolute;
+  inset: var(--bezel);
+  border-radius: 37px;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(118deg,
+    rgba(255, 255, 255, .16) 0%,
+    rgba(255, 255, 255, .05) 22%,
+    transparent 42%);
+  mix-blend-mode: soft-light;
+}
+
+/* ---------- status bar ---------- */
+
+.statusbar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 22px 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--fg);
+  letter-spacing: .01em;
+  z-index: 3;
+}
+.statusbar svg { display: block; height: 10px; width: auto; }
+.statusbar__icons { display: flex; align-items: center; gap: 4px; }
+
+/* ---------- screens ---------- */
+
+.screens { position: relative; flex: 1; min-height: 0; }
+
+.screen {
+  position: absolute;
+  inset: 0;
+  padding: 14px 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px) scale(.985);
+  transition: opacity 340ms ease, transform 340ms cubic-bezier(.2, .7, 0, 1), visibility 340ms;
+}
+.screen.is-active { opacity: 1; visibility: visible; transform: none; }
+
+.screen__title {
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  margin: 0 0 .2rem;
+  padding-inline: 4px;
+}
+.screen__sub {
+  font-size: .68rem;
+  color: var(--muted);
+  margin: -.35rem 0 .45rem;
+  padding-inline: 4px;
+}
+
+/* --- screen 1: the list --- */
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .5rem .55rem;
+  border-radius: 13px;
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  box-shadow: var(--shadow-sm);
+}
+.row__av {
+  flex: none;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: .74rem;
+  font-weight: 800;
+  background: var(--primary-wash);
+  color: var(--primary-ink);
+}
+.row__av--warm { background: var(--accent-wash, #F6DFD5); color: #3A1E14; }
+.row__body { min-width: 0; flex: 1; }
+.row__name { display: block; font-size: .8rem; font-weight: 700; line-height: 1.3; }
+.row__meta { display: block; font-size: .67rem; color: var(--muted); line-height: 1.35; }
+.row__when {
+  flex: none;
+  font-size: .62rem;
+  font-weight: 700;
+  padding: .16rem .45rem;
+  border-radius: 999px;
+  background: var(--surface-sunk);
+  color: var(--muted);
+}
+.row--due .row__when { background: var(--accent); color: #fff; }
+
+/* the app's own labelled divider between what is due and what is not */
+.screen__divider {
+  margin: .5rem 0 -.1rem;
+  padding-inline: 4px;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+:lang(he) .screen__divider { letter-spacing: 0; text-transform: none; font-size: .68rem; }
+
+/* --- screen 2: the draft --- */
+
+.note-line {
+  font-size: .66rem;
+  color: var(--muted);
+  padding-inline: 4px;
+  margin: 0;
+}
+
+.draft-card {
+  padding: .7rem .8rem;
+  border-radius: 15px;
+  background: var(--surface);
+  border: 1px dashed var(--line);
+}
+.draft-card__label {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .66rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin: 0 0 .35rem;
+}
+.draft-card__label .spark {
+  width: .42rem;
+  height: .42rem;
+  border-radius: 50%;
+  background: var(--ember-deep);
+  flex: none;
+}
+.typed {
+  margin: 0;
+  font-size: .78rem;
+  line-height: 1.62;
+  min-height: 5.1em;
+}
+/* the cursor only exists while the line is being written */
+.typed.is-typing::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-inline-start: 2px;
+  vertical-align: -.15em;
+  background: var(--accent);
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.acts { display: flex; gap: .3rem; margin-top: .6rem; }
+.act {
+  flex: 1;
+  text-align: center;
+  padding: .38rem .3rem;
+  border-radius: 999px;
+  font-size: .68rem;
+  font-weight: 700;
+  white-space: nowrap;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 380ms ease, transform 380ms cubic-bezier(.2, .7, 0, 1);
+}
+.act--go { background: var(--primary); border-color: var(--primary); color: #fff; }
+.acts.is-ready .act { opacity: 1; transform: none; }
+.acts.is-ready .act:nth-child(2) { transition-delay: 70ms; }
+.acts.is-ready .act:nth-child(3) { transition-delay: 140ms; }
+
+/* --- screen 3: sent --- */
+
+.thread { display: flex; flex-direction: column; gap: .45rem; margin-top: auto; }
+.msg {
+  max-width: 88%;
+  padding: .5rem .65rem;
+  border-radius: 15px;
+  font-size: .76rem;
+  line-height: 1.55;
+  box-shadow: var(--shadow-sm);
+}
+.msg--out {
+  align-self: flex-end;
+  background: var(--primary-wash);
+  color: var(--primary-ink);
+  border-end-end-radius: 5px;
+}
+.msg--in {
+  align-self: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-end-start-radius: 5px;
+}
+.msg__tick {
+  display: block;
+  margin-top: .18rem;
+  font-size: .6rem;
+  text-align: end;
+  opacity: .72;
+}
+
+.toast {
+  margin-top: .55rem;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .32rem .75rem;
+  border-radius: 999px;
+  font-size: .66rem;
+  font-weight: 700;
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Each element of the thread lands in turn once the screen is shown. */
+.screen[data-screen="sent"].is-active .msg,
+.screen[data-screen="sent"].is-active .toast {
+  animation: rise .5s cubic-bezier(.2, .7, 0, 1) backwards;
+}
+.screen[data-screen="sent"].is-active .msg:nth-of-type(2) { animation-delay: .5s; }
+.screen[data-screen="sent"].is-active .toast { animation-delay: .9s; }
+
+/* ---------- the app's own bottom bar ---------- */
+
+/* Constant across all three screens, the way it is in the app — it is what
+   makes the frame read as software rather than a picture of a card. */
+.tabbar {
+  flex: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: .5rem .8rem 1.1rem;
+  border-top: 1px solid var(--line-soft);
+  background: var(--surface);
+  z-index: 3;
+}
+.tabbar span {
+  display: grid;
+  place-items: center;
+  gap: 2px;
+  font-size: .55rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+.tabbar span.is-on { color: var(--primary); }
+.tabbar svg { width: 1.05rem; height: 1.05rem; }
+
+.tabbar__home {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34%;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--fg);
+  opacity: .28;
+  z-index: 4;
+}
+
+/* ---------- reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .progress { display: none; }
+  html.js .hero__inner > *,
+  html.js .glow,
+  .screen[data-screen="sent"].is-active .msg,
+  .screen[data-screen="sent"].is-active .toast { animation: none; }
+  html.js .glow { background-position: 0 0; }
+  html.js .device:hover .device__frame { transform: none; }
+  .screen { transition: none; }
+  .typed.is-typing::after { animation: none; }
+  .acts .act { opacity: 1; transform: none; transition: none; }
+  .spot::before { transition: none; }
+}

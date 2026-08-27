@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Smish — remember the people who matter</title>
+<meta name="description" content="Smish reminds you before the date arrives and helps you write a personal greeting in Hebrew or English — then hands it to WhatsApp, Telegram, or SMS.">
+
+<link rel="canonical" href="https://morielv.github.io/smish-site/en/">
+<link rel="alternate" hreflang="he" href="https://morielv.github.io/smish-site/">
+<link rel="alternate" hreflang="en" href="https://morielv.github.io/smish-site/en/">
+<link rel="alternate" hreflang="x-default" href="https://morielv.github.io/smish-site/en/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Smish">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:url" content="https://morielv.github.io/smish-site/en/">
+<meta property="og:title" content="Smish — remember the people who matter">
+<meta property="og:description" content="Reminds you before the date arrives, and helps you write something personal enough to actually be worth sending.">
+<meta property="og:image" content="https://morielv.github.io/smish-site/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Smish — a firefly and the trail of light it left behind">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#14110D">
+
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/assistant-latin.woff2" crossorigin>
+<script>
+/* Set the chosen theme before first paint, so a reload never flashes the
+   wrong one. Everything else lives in assets/site.js. */
+(function(){try{var t=localStorage.getItem("smish-theme");
+if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/device.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Smish",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Android, iOS",
+  "inLanguage": ["he", "en"],
+  "description": "Smish reminds you before the date arrives and helps you write a personal greeting, then hands it to WhatsApp, Telegram, or SMS.",
+  "url": "https://morielv.github.io/smish-site/en/",
+  "author": { "@type": "Person", "name": "Moriel Veksler" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"></div>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hero">
+  <canvas class="hero__sky" aria-hidden="true"></canvas>
+
+  <div class="masthead">
+    <a class="brand" href="./"><img src="../assets/mark.svg" alt="" width="34" height="34">Smish</a>
+    <div class="masthead__tools">
+      <button class="theme-toggle" type="button" data-theme-toggle
+              aria-label="Theme: follow system"
+              data-label-system="Theme: follow system"
+              data-label-light="Theme: light"
+              data-label-dark="Theme: dark">
+        <svg class="i-system" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8.5 20.5h7"/></svg>
+        <svg class="i-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.2M12 19.4v2.2M4.2 12H2M22 12h-2.2M6.5 6.5 4.9 4.9M19.1 19.1l-1.6-1.6M17.5 6.5l1.6-1.6M4.9 19.1l1.6-1.6"/></svg>
+        <svg class="i-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a6.9 6.9 0 0 0 11.1 11.1z"/></svg>
+      </button>
+      <nav aria-label="Language">
+        <a class="lang-switch" href="../" hreflang="he" lang="he">עברית</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="hero__inner">
+    <p class="hero__badge"><span class="dot" aria-hidden="true"></span>Greetings in Hebrew or English, in your voice</p>
+    <h1>Remember the people <span class="glow">who matter</span></h1>
+    <p class="hero__lede">And say it properly — without the guilt of having forgotten again.</p>
+    <div class="stores">
+      <span class="store" aria-disabled="true">Google&nbsp;Play — coming soon</span>
+      <span class="store" aria-disabled="true">App&nbsp;Store — coming soon</span>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <section class="band band--sunk">
+    <div class="band__inner stage" data-stage>
+      <div class="reveal">
+        <p class="eyebrow">What it looks like</p>
+        <h2 class="section-title">The draft writes itself in front of you</h2>
+        <p class="section-lede">Smish never sends anything on its own. It writes something that fits the person and the occasion, you edit it as much as you like — and only then do you press send.</p>
+        <p>Greetings are written in Hebrew or English, chosen per contact, in the style you picked.</p>
+
+        <div class="tabs" role="tablist" aria-label="App screens">
+          <button class="tab" role="tab" type="button" id="tab-list" aria-controls="scr-list" aria-selected="true">Who's coming up</button>
+          <button class="tab" role="tab" type="button" id="tab-draft" aria-controls="scr-draft" aria-selected="false" tabindex="-1">The draft</button>
+          <button class="tab" role="tab" type="button" id="tab-sent" aria-controls="scr-sent" aria-selected="false" tabindex="-1">After you send</button>
+        </div>
+      </div>
+
+      <div class="device reveal">
+        <div class="device__frame">
+          <span class="device__btn device__btn--silent" aria-hidden="true"></span>
+          <span class="device__btn device__btn--up" aria-hidden="true"></span>
+          <span class="device__btn device__btn--down" aria-hidden="true"></span>
+          <span class="device__btn device__btn--power" aria-hidden="true"></span>
+
+          <div class="device__screen">
+            <span class="device__island" aria-hidden="true"></span>
+
+            <div class="statusbar" aria-hidden="true">
+              <span class="statusbar__time">9:41</span>
+              <span class="statusbar__icons"><svg viewBox="0 0 18 12" fill="currentColor" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12" fill="currentColor" aria-hidden="true"><path d="M8 11.2 6.1 9.1a2.9 2.9 0 0 1 3.8 0zM3.6 6.6 2 4.9a8.7 8.7 0 0 1 12 0l-1.6 1.7a6.4 6.4 0 0 0-8.8 0zm1.5 1.6a4.2 4.2 0 0 1 5.8 0L9.4 9.6a2 2 0 0 0-2.8 0z"/></svg><svg viewBox="0 0 26 12" fill="none" aria-hidden="true"><rect x=".6" y=".6" width="21" height="10.8" rx="3.2" stroke="currentColor" stroke-opacity=".45"/><rect x="2.4" y="2.4" width="15" height="7.2" rx="2" fill="currentColor"/><path d="M23.4 4.2v3.6a2 2 0 0 0 0-3.6z" fill="currentColor" fill-opacity=".45"/></svg></span>
+            </div>
+
+            <div class="screens">
+
+              <div class="screen is-active" data-screen="list" role="tabpanel" id="scr-list" aria-labelledby="tab-list">
+                <p class="screen__title">This week</p>
+                <p class="screen__sub">Three people, by what is closest</p>
+            <div class="row row--due">
+              <span class="row__av" aria-hidden="true">D</span>
+              <span class="row__body"><span class="row__name">Dana Gal</span><span class="row__meta">Birthday</span></span>
+              <span class="row__when">Tomorrow</span>
+            </div>
+            <div class="row">
+              <span class="row__av row__av--warm" aria-hidden="true">D</span>
+              <span class="row__body"><span class="row__name">Dad</span><span class="row__meta">Anniversary</span></span>
+              <span class="row__when">In 4 days</span>
+            </div>
+            <div class="row">
+              <span class="row__av" aria-hidden="true">M</span>
+              <span class="row__body"><span class="row__name">Michal Barak</span><span class="row__meta">Rosh Hashanah</span></span>
+              <span class="row__when">In 2 weeks</span>
+            </div>
+
+            <p class="screen__divider">Everyone else</p>
+            <div class="row">
+              <span class="row__av" aria-hidden="true">R</span>
+              <span class="row__body"><span class="row__name">Ronen</span><span class="row__meta">Birthday</span></span>
+              <span class="row__when">In 3 weeks</span>
+            </div>
+            <div class="row">
+              <span class="row__av row__av--warm" aria-hidden="true">S</span>
+              <span class="row__body"><span class="row__name">Shira from work</span><span class="row__meta">A new home</span></span>
+              <span class="row__when">In a month</span>
+            </div>
+              </div>
+
+              <div class="screen" data-screen="draft" role="tabpanel" id="scr-draft" aria-labelledby="tab-draft">
+                <p class="screen__title">Dana Gal</p>
+                <p class="screen__sub">Birthday · tomorrow</p>
+                <div class="draft-card">
+                  <p class="draft-card__label"><span class="spark" aria-hidden="true"></span>Draft</p>
+                  <p class="typed">Dana, happy birthday! Here's to a quiet, good year — and to actually having the time to enjoy it. Miss you. Let's sit down soon.</p>
+                  <div class="acts">
+                    <span class="act">Rewrite</span>
+                    <span class="act">Edit</span>
+                    <span class="act act--go">Send</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="screen" data-screen="sent" role="tabpanel" id="scr-sent" aria-labelledby="tab-sent">
+                <p class="screen__title">Dana Gal</p>
+                <p class="screen__sub">WhatsApp</p>
+                <div class="thread">
+                  <p class="msg msg--out">Dana, happy birthday! Here's to a quiet, good year — and to actually having the time to enjoy it.<span class="msg__tick">9:41 ✓✓</span></p>
+                  <p class="msg msg--in">Thank you so much!! ❤️</p>
+                  <span class="toast">Saved to history</span>
+                </div>
+              </div>
+
+            </div>
+
+            <nav class="tabbar" aria-hidden="true">
+              <span class="is-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 19v-1.6a3.4 3.4 0 0 0-3.4-3.4H6.4A3.4 3.4 0 0 0 3 17.4V19"/><circle cx="9.5" cy="7.5" r="3.5"/><path d="M21 19v-1.6a3.4 3.4 0 0 0-2.6-3.3M15.5 4.2a3.5 3.5 0 0 1 0 6.6"/></svg>People</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Add</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 7.9 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H2a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 4.6 7.9a1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H9a1.6 1.6 0 0 0 1-1.5V2a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg>Settings</span>
+            </nav>
+            <span class="tabbar__home" aria-hidden="true"></span>
+          </div>
+
+          <span class="device__glare" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band__inner">
+      <div class="reveal">
+        <p class="eyebrow">How it works</p>
+        <h2 class="section-title">Three steps, once a year per person</h2>
+      </div>
+      <ol class="steps">
+        <li class="reveal spot">
+          <span class="n" aria-hidden="true">1</span>
+          <h3>Add people</h3>
+          <p>Import from your contacts or add them by hand, with the dates that matter to them.</p>
+        </li>
+        <li class="reveal spot">
+          <span class="n" aria-hidden="true">2</span>
+          <h3>Get reminded</h3>
+          <p>A few days ahead, not the morning of — so there's still time to think about what to say.</p>
+        </li>
+        <li class="reveal spot">
+          <span class="n" aria-hidden="true">3</span>
+          <h3>Send it in your voice</h3>
+          <p>Edit the draft, then send from WhatsApp, Telegram, or SMS.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band band--sunk">
+    <div class="band__inner reveal">
+      <p class="eyebrow">Not just birthdays</p>
+      <h2 class="section-title">All year, not one day a year</h2>
+      <p class="section-lede">A birthday app thinks about someone once a year.
+      Smish knows the rest of what happens to them.</p>
+      <ul class="chips">
+        <li>Birthdays</li>
+        <li>Anniversaries</li>
+        <li>Rosh Hashanah</li>
+        <li>Passover</li>
+        <li>Hanukkah</li>
+        <li>Graduations</li>
+        <li>A new home</li>
+        <li>A private day of remembrance</li>
+        <li>And whatever you define yourself</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band band--night">
+    <div class="band__inner plan-band reveal">
+      <div>
+        <p class="eyebrow">Smish+</p>
+        <h2 class="section-title">Free until it becomes a habit</h2>
+        <p class="section-lede">Smish is free to use, with a monthly allowance of generated
+        greetings and a limit on how many people you can track.</p>
+      </div>
+
+      <div class="plan spot">
+        <h3>Smish+</h3>
+        <p class="plan__sub">Lifts both limits.</p>
+        <ul>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
+            <span>Greetings without a monthly allowance</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
+            <span>No cap on how many people you track</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
+            <span>Greeting history kept, so you never repeat yourself</span>
+          </li>
+        </ul>
+        <p class="fineprint">An auto-renewing subscription, billed through the
+        App&nbsp;Store or Google&nbsp;Play. The price is shown in the app in your own
+        currency before you confirm, and you can cancel any time from your store
+        account settings.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band__inner">
+      <div class="reveal">
+        <p class="eyebrow">Questions</p>
+        <h2 class="section-title">What people usually ask</h2>
+      </div>
+
+      <div class="faq reveal">
+        <details>
+          <summary>Does Smish send messages for me?</summary>
+          <p>No. Smish prepares the text and opens WhatsApp, Telegram, or SMS with the
+          message ready. You read it and press send. Nothing leaves without you.</p>
+        </details>
+        <details>
+          <summary>What happens to my contacts?</summary>
+          <p>Smish does not upload your address book. It asks for access so you can pick
+          who to add, and only the people you explicitly select reach the server. You can
+          also add people by hand and never grant access at all.</p>
+        </details>
+        <details>
+          <summary>Which languages?</summary>
+          <p>The interface is in Hebrew and English. Greetings themselves are written in
+          Hebrew or English, chosen per contact.</p>
+        </details>
+        <details>
+          <summary>The greeting is written by AI. Doesn't that feel fake?</summary>
+          <p>The draft is a starting point, not a finished product. Smish learns how you
+          write and produces something close to it — then you edit. Most people change a
+          line or two and send.</p>
+        </details>
+        <details>
+          <summary>Where can I ask something?</summary>
+          <p>By email: <a href="mailto:moriel.veksler@gmail.com">moriel.veksler@gmail.com</a>.
+          A person answers, not a bot.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--sunk closer">
+    <div class="band__inner reveal">
+      <h2 class="section-title">Let something else do the remembering</h2>
+      <p class="section-lede">Smish isn't in the stores yet. It's on its way.</p>
+      <div class="stores">
+        <span class="store" aria-disabled="true">Google&nbsp;Play — coming soon</span>
+        <span class="store" aria-disabled="true">App&nbsp;Store — coming soon</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <a href="../terms.html">Terms of Use</a>
+    <a href="../privacy.html">Privacy Policy</a>
+    <a href="mailto:moriel.veksler@gmail.com">Support</a>
+    <span class="spacer">© 2026 Moriel Veksler</span>
+  </div>
+</footer>
+
+<script src="../assets/site.js" defer></script>
+<script src="../assets/showcase.js" defer></script>
+</body>
+</html>

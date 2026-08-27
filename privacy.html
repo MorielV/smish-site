@@ -1,156 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Smish — Privacy Policy</title>
-<style>
-  :root { color-scheme: light dark; }
-  body { max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 5rem;
-         font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-  h1 { font-size: 1.9rem; margin-bottom: .25rem; }
-  h2 { margin-top: 2.25rem; font-size: 1.2rem; }
-  .updated { color: #666; font-size: .9rem; }
-  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
-  th, td { border: 1px solid #8884; padding: .5rem .6rem; text-align: left; vertical-align: top; font-size: .95rem; }
-  code { font-size: .9em; }
-</style>
+
+<title>Privacy Policy — Smish</title>
+<meta name="description" content="What Smish collects, why, who processes it, and how to export or delete it.">
+
+<link rel="canonical" href="https://morielv.github.io/smish-site/privacy.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Smish">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://morielv.github.io/smish-site/privacy.html">
+<meta property="og:title" content="Privacy Policy — Smish">
+<meta property="og:description" content="What Smish collects, why, who processes it, and how to export or delete it.">
+<meta property="og:image" content="https://morielv.github.io/smish-site/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#FBF8F1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1C1813" media="(prefers-color-scheme: dark)">
+
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/assistant-latin.woff2" crossorigin>
+<script>
+/* Set the chosen theme before first paint, so a reload never flashes the
+   wrong one. Everything else lives in assets/site.js. */
+(function(){try{var t=localStorage.getItem("smish-theme");
+if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
-<h1>Privacy Policy</h1>
-<p class="updated">Last updated: 23 August 2026</p>
+<a class="skip" href="#main">Skip to content</a>
 
-<p>Smish is a mobile app that helps you write and send personal greetings to people you
-care about. This policy explains what it collects, why, who it is shared with, and how
-you get rid of it.</p>
+<div class="legal">
 
-<p>Smish is operated by Moriel Veksler ("we", "us"). Contact:
-<a href="mailto:moriel.veksler@gmail.com">moriel.veksler@gmail.com</a>.</p>
+  <header class="masthead masthead--plain">
+    <a class="brand" href="./"><img src="assets/mark.svg" alt="" width="34" height="34">Smish</a>
+    <div class="masthead__tools">
+      <button class="theme-toggle" type="button" data-theme-toggle
+              aria-label="Theme: follow system"
+              data-label-system="Theme: follow system"
+              data-label-light="Theme: light"
+              data-label-dark="Theme: dark">
+        <svg class="i-system" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8.5 20.5h7"/></svg>
+        <svg class="i-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.2M12 19.4v2.2M4.2 12H2M22 12h-2.2M6.5 6.5 4.9 4.9M19.1 19.1l-1.6-1.6M17.5 6.5l1.6-1.6M4.9 19.1l1.6-1.6"/></svg>
+        <svg class="i-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a6.9 6.9 0 0 0 11.1 11.1z"/></svg>
+      </button>
+    </div>
+  </header>
 
-<h2>1. What we collect</h2>
+  <main id="main" tabindex="-1">
 
-<table>
-  <tr><th>Data</th><th>Why</th></tr>
-  <tr>
-    <td><strong>Account details</strong> — your email address and display name, received from
-        Google or Apple when you sign in.</td>
-    <td>To create and identify your account.</td>
-  </tr>
-  <tr>
-    <td><strong>Contacts you choose to import</strong> — name, phone number, optional nickname,
-        preferred greeting language, occasion dates such as birthdays and anniversaries, and any
-        free-text notes you add about a person.</td>
-    <td>To know who to remind you about and to personalise the greeting.</td>
-  </tr>
-  <tr>
-    <td><strong>Greetings</strong> — the messages generated for you, your edits, and a record of
-        which ones you marked as sent.</td>
-    <td>To show your history and avoid repeating a greeting.</td>
-  </tr>
-  <tr>
-    <td><strong>Preferences</strong> — theme, interface language, default greeting language,
-        sender voice, message length, reminder timing and channel.</td>
-    <td>To keep the app behaving the way you set it.</td>
-  </tr>
-  <tr>
-    <td><strong>Usage counters</strong> — how many greetings you generated in the current month.</td>
-    <td>To enforce the free tier's monthly allowance.</td>
-  </tr>
-  <tr>
-    <td><strong>Subscription status</strong> — whether Smish+ is active, which product, when it
-        expires, and which store it came from.</td>
-    <td>To unlock paid features.</td>
-  </tr>
-</table>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: 23 August 2026</p>
 
-<p><strong>Only the contacts you pick.</strong> Smish asks for contacts access so you can choose
-people to import. It does not upload your address book. A contact reaches our servers only after
-you select them.</p>
+    <p>Smish is a mobile app that helps you write and send personal greetings to people you
+    care about. This policy explains what it collects, why, who it is shared with, and how
+    you get rid of it.</p>
 
-<h2>2. What we do not collect</h2>
-<ul>
-  <li><strong>Payment details.</strong> Card and billing information is handled entirely by Apple
-      or Google. We never see it.</li>
-  <li><strong>Location.</strong> Smish does not request or record your location.</li>
-  <li><strong>Advertising identifiers.</strong> There is no advertising in Smish, and no
-      third-party ad or analytics tracker.</li>
-  <li><strong>Message contents from other apps.</strong> Smish cannot read your WhatsApp,
-      Telegram, or SMS conversations.</li>
-</ul>
+    <p>Smish is operated by Moriel Veksler ("we", "us"). Contact:
+    <a href="mailto:moriel.veksler@gmail.com">moriel.veksler@gmail.com</a>.</p>
 
-<h2>3. How greetings are generated</h2>
-<p>To write a greeting, Smish sends the relevant details for that one contact — their name or
-nickname, your relationship to them, the occasion, the language and tone you chose, and any notes
-you added about them — to an AI language model provider, which returns the text. Your full contact
-list is never sent, and the greeting is generated for you alone.</p>
-<p>We use Google (Gemini) and/or Anthropic (Claude) as the model provider. These providers process
-the request on our behalf under their business terms and do not use this content to train their
-models.</p>
+    <h2>1. What we collect</h2>
 
-<h2>4. Who else processes your data</h2>
-<table>
-  <tr><th>Provider</th><th>Role</th></tr>
-  <tr><td>Google Firebase Authentication</td><td>Sign-in with Google or Apple</td></tr>
-  <tr><td>Neon</td><td>Hosts the database holding your account, contacts, and greetings</td></tr>
-  <tr><td>RevenueCat</td><td>Manages subscription status</td></tr>
-  <tr><td>Google (Gemini) / Anthropic (Claude)</td><td>Generates greeting text</td></tr>
-  <tr><td>Apple App Store / Google Play</td><td>Processes payments</td></tr>
-</table>
-<p>We do not sell your data, and we do not share it for advertising.</p>
+    <div class="scroller"><table>
+      <tr><th>Data</th><th>Why</th></tr>
+      <tr>
+        <td><strong>Account details</strong> — your email address and display name, received from
+            Google or Apple when you sign in.</td>
+        <td>To create and identify your account.</td>
+      </tr>
+      <tr>
+        <td><strong>Contacts you choose to import</strong> — name, phone number, optional nickname,
+            preferred greeting language, occasion dates such as birthdays and anniversaries, and any
+            free-text notes you add about a person.</td>
+        <td>To know who to remind you about and to personalise the greeting.</td>
+      </tr>
+      <tr>
+        <td><strong>Greetings</strong> — the messages generated for you, your edits, and a record of
+            which ones you marked as sent.</td>
+        <td>To show your history and avoid repeating a greeting.</td>
+      </tr>
+      <tr>
+        <td><strong>Preferences</strong> — theme, interface language, default greeting language,
+            sender voice, message length, reminder timing and channel.</td>
+        <td>To keep the app behaving the way you set it.</td>
+      </tr>
+      <tr>
+        <td><strong>Usage counters</strong> — how many greetings you generated in the current month.</td>
+        <td>To enforce the free tier's monthly allowance.</td>
+      </tr>
+      <tr>
+        <td><strong>Subscription status</strong> — whether Smish+ is active, which product, when it
+            expires, and which store it came from.</td>
+        <td>To unlock paid features.</td>
+      </tr>
+    </table></div>
 
-<h2>5. Device permissions</h2>
-<ul>
-  <li><strong>Contacts</strong> — so you can pick people to import. Optional; you can add contacts
-      by hand instead.</li>
-  <li><strong>Calendar</strong> — to import birthdays you already keep in your calendar, and to
-      write reminders back to it if you choose that reminder channel. Optional.</li>
-  <li><strong>Notifications</strong> — to remind you about an upcoming occasion. Optional.</li>
-</ul>
-<p>Declining any of these leaves the rest of the app working.</p>
+    <p><strong>Only the contacts you pick.</strong> Smish asks for contacts access so you can choose
+    people to import. It does not upload your address book. A contact reaches our servers only after
+    you select them.</p>
 
-<h2>6. Sending messages</h2>
-<p>Smish does not send messages for you. When you send a greeting, Smish opens WhatsApp, Telegram,
-or your SMS app with the text prepared, and you press send. Whatever happens after that is governed
-by that app's own privacy policy, not this one.</p>
+    <h2>2. What we do not collect</h2>
+    <ul>
+      <li><strong>Payment details.</strong> Card and billing information is handled entirely by Apple
+          or Google. We never see it.</li>
+      <li><strong>Location.</strong> Smish does not request or record your location.</li>
+      <li><strong>Advertising identifiers.</strong> There is no advertising in Smish, and no
+          third-party ad or analytics tracker.</li>
+      <li><strong>Message contents from other apps.</strong> Smish cannot read your WhatsApp,
+          Telegram, or SMS conversations.</li>
+    </ul>
 
-<h2>7. How long we keep it</h2>
-<p>Your data stays until you delete it. Deleting a contact removes that contact and its greetings.
-Deleting your account removes everything associated with it. Backups are purged on a rolling basis
-within 30 days.</p>
+    <h2>3. How greetings are generated</h2>
+    <p>To write a greeting, Smish sends the relevant details for that one contact — their name or
+    nickname, your relationship to them, the occasion, the language and tone you chose, and any notes
+    you added about them — to an AI language model provider, which returns the text. Your full contact
+    list is never sent, and the greeting is generated for you alone.</p>
+    <p>We use Google (Gemini) and/or Anthropic (Claude) as the model provider. These providers process
+    the request on our behalf under their business terms and do not use this content to train their
+    models.</p>
 
-<h2>8. Your rights</h2>
-<p>You can, from inside the app:</p>
-<ul>
-  <li><strong>Export</strong> a copy of your data.</li>
-  <li><strong>Delete your account</strong> and all data attached to it — Settings → Delete account.</li>
-</ul>
-<p>Depending on where you live you may also have rights to correct your data, restrict how it is
-used, or object to processing. Email us and we will action it. If you are in the EEA or UK, our
-legal bases are performance of a contract (running the service), legitimate interests (keeping it
-secure and working), and consent (device permissions).</p>
+    <h2>4. Who else processes your data</h2>
+    <div class="scroller"><table>
+      <tr><th>Provider</th><th>Role</th></tr>
+      <tr><td>Google Firebase Authentication</td><td>Sign-in with Google or Apple</td></tr>
+      <tr><td>Neon</td><td>Hosts the database holding your account, contacts, and greetings</td></tr>
+      <tr><td>RevenueCat</td><td>Manages subscription status</td></tr>
+      <tr><td>Google (Gemini) / Anthropic (Claude)</td><td>Generates greeting text</td></tr>
+      <tr><td>Apple App Store / Google Play</td><td>Processes payments</td></tr>
+    </table></div>
+    <p>We do not sell your data, and we do not share it for advertising.</p>
 
-<h2>9. Security</h2>
-<p>Traffic between the app and our servers is encrypted in transit. Sign-in uses short-lived access
-tokens; credentials are held in the device's secure storage. Access to the production database is
-restricted to the operator.</p>
+    <h2>5. Device permissions</h2>
+    <ul>
+      <li><strong>Contacts</strong> — so you can pick people to import. Optional; you can add contacts
+          by hand instead.</li>
+      <li><strong>Calendar</strong> — to import birthdays you already keep in your calendar, and to
+          write reminders back to it if you choose that reminder channel. Optional.</li>
+      <li><strong>Notifications</strong> — to remind you about an upcoming occasion. Optional.</li>
+    </ul>
+    <p>Declining any of these leaves the rest of the app working.</p>
 
-<h2>10. International transfers</h2>
-<p>Smish is available worldwide, and the providers above operate in several countries — including
-the United States. Where data leaves your region, it is transferred under the safeguards those
-providers offer, such as Standard Contractual Clauses.</p>
+    <h2>6. Sending messages</h2>
+    <p>Smish does not send messages for you. When you send a greeting, Smish opens WhatsApp, Telegram,
+    or your SMS app with the text prepared, and you press send. Whatever happens after that is governed
+    by that app's own privacy policy, not this one.</p>
 
-<h2>11. Children</h2>
-<p>Smish is not directed at children under 13 (or the minimum age of digital consent where you
-live), and we do not knowingly collect their data. If you believe a child has given us data,
-email us and we will remove it.</p>
+    <h2>7. How long we keep it</h2>
+    <p>Your data stays until you delete it. Deleting a contact removes that contact and its greetings.
+    Deleting your account removes everything associated with it. Backups are purged on a rolling basis
+    within 30 days.</p>
 
-<h2>12. Changes</h2>
-<p>If this policy changes materially we will update the date above and notify you in the app before
-the change takes effect.</p>
+    <h2>8. Your rights</h2>
+    <p>You can, from inside the app:</p>
+    <ul>
+      <li><strong>Export</strong> a copy of your data.</li>
+      <li><strong>Delete your account</strong> and all data attached to it — Settings → Delete account.</li>
+    </ul>
+    <p>Depending on where you live you may also have rights to correct your data, restrict how it is
+    used, or object to processing. Email us and we will action it. If you are in the EEA or UK, our
+    legal bases are performance of a contract (running the service), legitimate interests (keeping it
+    secure and working), and consent (device permissions).</p>
 
-<h2>13. Contact</h2>
-<p><a href="mailto:moriel.veksler@gmail.com">moriel.veksler@gmail.com</a></p>
+    <h2>9. Security</h2>
+    <p>Traffic between the app and our servers is encrypted in transit. Sign-in uses short-lived access
+    tokens; credentials are held in the device's secure storage. Access to the production database is
+    restricted to the operator.</p>
+
+    <h2>10. International transfers</h2>
+    <p>Smish is available worldwide, and the providers above operate in several countries — including
+    the United States. Where data leaves your region, it is transferred under the safeguards those
+    providers offer, such as Standard Contractual Clauses.</p>
+
+    <h2>11. Children</h2>
+    <p>Smish is not directed at children under 13 (or the minimum age of digital consent where you
+    live), and we do not knowingly collect their data. If you believe a child has given us data,
+    email us and we will remove it.</p>
+
+    <h2>12. Changes</h2>
+    <p>If this policy changes materially we will update the date above and notify you in the app before
+    the change takes effect.</p>
+
+    <h2>13. Contact</h2>
+    <p><a href="mailto:moriel.veksler@gmail.com">moriel.veksler@gmail.com</a></p>
+
+  
+
+  </main>
+
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <a href="./">Home</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <span class="spacer">© 2026 Moriel Veksler</span>
+  </div>
+</footer>
 
 </body>
 </html>
