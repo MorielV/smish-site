@@ -9,6 +9,45 @@
      otherwise a script error would leave every revealed section invisible. */
   document.documentElement.classList.add("js");
 
+  /* ---------- theme toggle ---------- */
+
+  /* Cycles system -> light -> dark. "system" stores nothing and lets the OS
+     decide; the other two write data-theme, which beats the media query in
+     both directions. The initial attribute is set by a tiny inline script in
+     each page's <head>, so a reload never flashes the wrong theme. */
+  var STORE = "smish-theme";
+  var MODES = ["system", "light", "dark"];
+
+  function currentMode() {
+    try {
+      var v = localStorage.getItem(STORE);
+      return MODES.indexOf(v) > 0 ? v : "system";
+    } catch (e) { return "system"; }
+  }
+
+  function applyMode(mode, button) {
+    if (mode === "system") document.documentElement.removeAttribute("data-theme");
+    else document.documentElement.setAttribute("data-theme", mode);
+
+    try {
+      mode === "system" ? localStorage.removeItem(STORE) : localStorage.setItem(STORE, mode);
+    } catch (e) { /* private mode — the choice just will not persist */ }
+
+    if (!button) return;
+    button.setAttribute("data-mode", mode);
+    var label = button.getAttribute("data-label-" + mode);
+    if (label) { button.setAttribute("aria-label", label); button.title = label; }
+  }
+
+  var toggle = document.querySelector("[data-theme-toggle]");
+  if (toggle) {
+    applyMode(currentMode(), toggle);
+    toggle.addEventListener("click", function () {
+      var next = MODES[(MODES.indexOf(currentMode()) + 1) % MODES.length];
+      applyMode(next, toggle);
+    });
+  }
+
   /* ---------- scroll reveal ---------- */
 
   var revealables = document.querySelectorAll(".reveal");

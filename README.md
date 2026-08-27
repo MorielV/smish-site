@@ -38,6 +38,14 @@ Plain static HTML, no build step. Served by GitHub Pages from `main`.
   The typeface is Assistant, self-hosted from `assets/fonts/` in two subsets
   (`unicode-range` picks the right one), so the Hebrew and English pages share
   one family. `OFL.txt` ships beside it as the licence requires.
+- **Theme is a three-state choice, not two.** Bare `:root` is light, the OS
+  preference applies only while the visitor has not explicitly picked light,
+  and `[data-theme]` beats the media query in both directions — so the
+  masthead toggle can override a dark OS. Each page carries a tiny inline
+  script in `<head>` that stamps the stored choice before first paint;
+  without it a reload flashes the wrong theme. The hero, the Smish+ band and
+  the footer stay dark in every mode: that night palette is the brand, not
+  the theme.
 - **Nothing may depend on JavaScript to be readable.** `site.js` adds `.js` to
   the root element before anything else, and only then does CSS hide the
   `.reveal` blocks — if the script fails, every section stays visible. The

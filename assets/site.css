@@ -61,8 +61,11 @@
   --shadow-lg: 0 2px 4px rgba(46, 42, 36, .05), 0 30px 60px -28px rgba(46, 42, 36, .34);
 }
 
+/* Three theme states. Bare :root is light. The OS preference applies only
+   while the visitor has not explicitly chosen light, and an explicit choice
+   wins in both directions — so the masthead toggle can override a dark OS. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #1C1813;
     --fg: #EDE6D8;
     --muted: #B6AB97;
@@ -80,6 +83,27 @@
     --shadow-lg: 0 2px 4px rgba(0, 0, 0, .5), 0 30px 60px -28px rgba(0, 0, 0, .9);
   }
 }
+
+:root[data-theme="dark"] {
+    --bg: #1C1813;
+    --fg: #EDE6D8;
+    --muted: #B6AB97;
+    --surface: #262019;
+    --surface-sunk: #201B15;
+    --line: #3A3228;
+    --line-soft: #2E2720;
+    --primary: #7FA875;
+    --primary-ink: #DCEBD6;
+    --primary-wash: #324230;
+    --accent: #D9A491;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 30px -14px rgba(0, 0, 0, .75);
+    --shadow-lg: 0 2px 4px rgba(0, 0, 0, .5), 0 30px 60px -28px rgba(0, 0, 0, .9);
+}
+
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -190,7 +214,38 @@ p:last-child { margin-bottom: 0; }
 .masthead--plain .brand { color: var(--fg); }
 .brand img { display: block; width: 34px; height: 34px; border-radius: 10px; }
 
-.masthead nav { margin-inline-start: auto; }
+.masthead__tools {
+  margin-inline-start: auto;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  padding: 0;
+  border: 1px solid var(--night-line);
+  border-radius: 999px;
+  background: none;
+  color: var(--night-muted);
+  cursor: pointer;
+  font: inherit;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+.theme-toggle:hover { color: var(--night-fg); border-color: var(--night-muted); }
+.masthead--plain .theme-toggle { border-color: var(--line); color: var(--muted); }
+.masthead--plain .theme-toggle:hover { color: var(--fg); border-color: var(--muted); }
+
+.theme-toggle svg { width: 1.05rem; height: 1.05rem; display: none; }
+.theme-toggle[data-mode="system"] .i-system,
+.theme-toggle[data-mode="light"] .i-light,
+.theme-toggle[data-mode="dark"] .i-dark { display: block; }
+/* Before the script runs there is no mode yet — show the system glyph so the
+   control is never an empty circle. */
+.theme-toggle:not([data-mode]) .i-system { display: block; }
 
 .lang-switch {
   display: inline-block;
