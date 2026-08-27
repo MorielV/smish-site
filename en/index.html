@@ -28,9 +28,9 @@
 <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
-<meta name="theme-color" content="#FBF8F1" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#1C1813" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#14110D">
 
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/assistant-latin.woff2" crossorigin>
 <link rel="stylesheet" href="../assets/site.css">
 
 <script type="application/ld+json">
@@ -52,114 +52,208 @@
 
 <a class="skip" href="#main">Skip to content</a>
 
-<div class="wrap">
+<header class="hero">
+  <canvas class="hero__sky" aria-hidden="true"></canvas>
 
-  <header class="masthead">
-    <a class="brand" href="./"><img src="../assets/mark.svg" alt="" width="32" height="32">Smish</a>
+  <div class="masthead">
+    <a class="brand" href="./"><img src="../assets/mark.svg" alt="" width="34" height="34">Smish</a>
     <nav aria-label="Language">
       <a class="lang-switch" href="../" hreflang="he" lang="he">עברית</a>
     </nav>
-  </header>
+  </div>
 
-  <main id="main" tabindex="-1">
-
-    <h1>Remember the people who matter</h1>
-    <p class="lede">And say it properly — without the guilt of having forgotten again.</p>
-
+  <div class="hero__inner">
+    <p class="hero__badge"><span class="dot" aria-hidden="true"></span>Greetings in Hebrew or English, in your voice</p>
+    <h1>Remember the people <span class="glow">who matter</span></h1>
+    <p class="hero__lede">And say it properly — without the guilt of having forgotten again.</p>
     <div class="stores">
-      <span class="store" aria-disabled="true">Google Play — coming soon</span>
-      <span class="store" aria-disabled="true">App Store — coming soon</span>
+      <span class="store" aria-disabled="true">Google&nbsp;Play — coming soon</span>
+      <span class="store" aria-disabled="true">App&nbsp;Store — coming soon</span>
     </div>
+  </div>
+</header>
 
-    <div class="card">
-      <p>Smish keeps track of the birthdays, anniversaries and holidays that matter to the
-      people in your life, reminds you before they arrive, and helps you write something
-      personal enough to actually be worth sending.</p>
+<main id="main" tabindex="-1">
+
+  <section class="band band--sunk">
+    <div class="band__inner showcase">
+      <div class="reveal">
+        <p class="eyebrow">What it looks like</p>
+        <h2 class="section-title">A draft that already sounds like you</h2>
+        <p class="section-lede">Smish never sends anything on its own. It writes something
+        that fits the person and the occasion, you edit it as much as you like — and only
+        then do you press send.</p>
+        <p>Greetings are written in Hebrew or English, chosen per contact, in the style
+        you picked.</p>
+      </div>
+
+      <div class="phone reveal" aria-hidden="true">
+        <div class="phone__screen">
+          <div class="chat">
+            <p class="chat__day">Tomorrow · Dana's birthday</p>
+
+            <div class="bubble bubble--them">
+              Thank you so much!! ❤️
+              <span class="bubble__meta">Dana · last year</span>
+            </div>
+
+            <div class="draft">
+              <p class="draft__label"><span class="spark"></span>Draft</p>
+              <p>Dana, happy birthday! Here's to a quiet, good year — and to actually
+              having the time to enjoy it. Miss you. Let's sit down soon.</p>
+              <div class="draft__actions">
+                <span class="pill">Rewrite</span>
+                <span class="pill">Edit</span>
+                <span class="pill pill--go">Send</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <h2>What it looks like</h2>
-
-    <figure class="sample" style="margin:0">
-      <figcaption class="who">Dana · birthday, in three days</figcaption>
-      <p class="msg msg--en">Dana, happy birthday! Here's to a quiet, good year — and to
-      actually having the time to enjoy it. Miss you. Let's sit down soon.</p>
-      <p class="meta">A draft in your voice · edit every word · sent from WhatsApp</p>
-    </figure>
-
-    <h2>How it works</h2>
-
-    <ol class="steps">
-      <li>
-        <span class="n" aria-hidden="true">1</span>
-        <h3>Add people</h3>
-        <p>Import from your contacts or add them by hand, along with the dates that matter
-        to them — a birthday, an anniversary, a holiday, or any personal occasion.</p>
-      </li>
-      <li>
-        <span class="n" aria-hidden="true">2</span>
-        <h3>Get reminded</h3>
-        <p>A few days ahead, not the morning of — so there's still time to think about
-        what you want to say.</p>
-      </li>
-      <li>
-        <span class="n" aria-hidden="true">3</span>
-        <h3>Send it in your own voice</h3>
-        <p>Smish drafts a greeting in Hebrew or English, in the style you picked. Edit it,
-        then send from WhatsApp, Telegram, or SMS.</p>
-      </li>
-    </ol>
-
-    <h2>Smish+</h2>
-    <p>Smish is free to use, with a monthly allowance of generated greetings and a limit on
-    how many people you can track. Smish+ lifts both. It's an auto-renewing subscription,
-    billed through the App&nbsp;Store or Google&nbsp;Play, and you can cancel any time from
-    your store account.</p>
-
-    <h2>Questions</h2>
-
-    <div class="faq">
-      <details>
-        <summary>Does Smish send messages for me?</summary>
-        <p>No. Smish prepares the text and opens WhatsApp, Telegram, or SMS with the message
-        ready. You read it and press send. Nothing leaves without you.</p>
-      </details>
-      <details>
-        <summary>What happens to my contacts?</summary>
-        <p>Smish does not upload your address book. It asks for access so you can pick who to
-        add, and only the people you explicitly select reach the server. You can also add
-        people by hand and never grant access at all.</p>
-      </details>
-      <details>
-        <summary>Which languages?</summary>
-        <p>The interface is in Hebrew and English. Greetings themselves are written in Hebrew
-        or English, chosen per contact.</p>
-      </details>
-      <details>
-        <summary>Which occasions does it know about?</summary>
-        <p>Birthdays, anniversaries, holidays, and personal occasions you define yourself.
-        This is not a birthday app — it runs all year.</p>
-      </details>
-      <details>
-        <summary>The greeting is written by AI. Doesn't that feel fake?</summary>
-        <p>The draft is a starting point, not a finished product. Smish learns how you write
-        and produces something close to it — then you edit. Most people change a line or two
-        and send.</p>
-      </details>
+  <section class="band">
+    <div class="band__inner">
+      <div class="reveal">
+        <p class="eyebrow">How it works</p>
+        <h2 class="section-title">Three steps, once a year per person</h2>
+      </div>
+      <ol class="steps">
+        <li class="reveal">
+          <span class="n" aria-hidden="true">1</span>
+          <h3>Add people</h3>
+          <p>Import from your contacts or add them by hand, with the dates that matter to them.</p>
+        </li>
+        <li class="reveal">
+          <span class="n" aria-hidden="true">2</span>
+          <h3>Get reminded</h3>
+          <p>A few days ahead, not the morning of — so there's still time to think about what to say.</p>
+        </li>
+        <li class="reveal">
+          <span class="n" aria-hidden="true">3</span>
+          <h3>Send it in your voice</h3>
+          <p>Edit the draft, then send from WhatsApp, Telegram, or SMS.</p>
+        </li>
+      </ol>
     </div>
+  </section>
 
-    <h2>Support</h2>
-    <p>Questions, bugs, or anything else:
-    <a href="mailto:moriel.veksler@gmail.com">moriel.veksler@gmail.com</a></p>
+  <section class="band band--sunk">
+    <div class="band__inner reveal">
+      <p class="eyebrow">Not just birthdays</p>
+      <h2 class="section-title">All year, not one day a year</h2>
+      <p class="section-lede">A birthday app thinks about someone once a year.
+      Smish knows the rest of what happens to them.</p>
+      <ul class="chips">
+        <li>Birthdays</li>
+        <li>Anniversaries</li>
+        <li>Rosh Hashanah</li>
+        <li>Passover</li>
+        <li>Hanukkah</li>
+        <li>Graduations</li>
+        <li>A new home</li>
+        <li>A private day of remembrance</li>
+        <li>And whatever you define yourself</li>
+      </ul>
+    </div>
+  </section>
 
-  </main>
+  <section class="band band--night">
+    <div class="band__inner plan-band reveal">
+      <div>
+        <p class="eyebrow">Smish+</p>
+        <h2 class="section-title">Free until it becomes a habit</h2>
+        <p class="section-lede">Smish is free to use, with a monthly allowance of generated
+        greetings and a limit on how many people you can track.</p>
+      </div>
 
-  <footer>
+      <div class="plan">
+        <h3>Smish+</h3>
+        <p class="plan__sub">Lifts both limits.</p>
+        <ul>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
+            <span>Greetings without a monthly allowance</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
+            <span>No cap on how many people you track</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
+            <span>Greeting history kept, so you never repeat yourself</span>
+          </li>
+        </ul>
+        <p class="fineprint">An auto-renewing subscription, billed through the
+        App&nbsp;Store or Google&nbsp;Play. The price is shown in the app in your own
+        currency before you confirm, and you can cancel any time from your store
+        account settings.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band__inner">
+      <div class="reveal">
+        <p class="eyebrow">Questions</p>
+        <h2 class="section-title">What people usually ask</h2>
+      </div>
+
+      <div class="faq reveal">
+        <details>
+          <summary>Does Smish send messages for me?</summary>
+          <p>No. Smish prepares the text and opens WhatsApp, Telegram, or SMS with the
+          message ready. You read it and press send. Nothing leaves without you.</p>
+        </details>
+        <details>
+          <summary>What happens to my contacts?</summary>
+          <p>Smish does not upload your address book. It asks for access so you can pick
+          who to add, and only the people you explicitly select reach the server. You can
+          also add people by hand and never grant access at all.</p>
+        </details>
+        <details>
+          <summary>Which languages?</summary>
+          <p>The interface is in Hebrew and English. Greetings themselves are written in
+          Hebrew or English, chosen per contact.</p>
+        </details>
+        <details>
+          <summary>The greeting is written by AI. Doesn't that feel fake?</summary>
+          <p>The draft is a starting point, not a finished product. Smish learns how you
+          write and produces something close to it — then you edit. Most people change a
+          line or two and send.</p>
+        </details>
+        <details>
+          <summary>Where can I ask something?</summary>
+          <p>By email: <a href="mailto:moriel.veksler@gmail.com">moriel.veksler@gmail.com</a>.
+          A person answers, not a bot.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--sunk closer">
+    <div class="band__inner reveal">
+      <h2 class="section-title">Let something else do the remembering</h2>
+      <p class="section-lede">Smish isn't in the stores yet. It's on its way.</p>
+      <div class="stores">
+        <span class="store" aria-disabled="true">Google&nbsp;Play — coming soon</span>
+        <span class="store" aria-disabled="true">App&nbsp;Store — coming soon</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
     <a href="../terms.html">Terms of Use</a>
     <a href="../privacy.html">Privacy Policy</a>
+    <a href="mailto:moriel.veksler@gmail.com">Support</a>
     <span class="spacer">© 2026 Moriel Veksler</span>
-  </footer>
+  </div>
+</footer>
 
-</div>
-
+<script src="../assets/site.js" defer></script>
 </body>
 </html>

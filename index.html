@@ -28,9 +28,9 @@
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#FBF8F1" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#1C1813" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#14110D">
 
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/assistant-hebrew.woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
 
 <script type="application/ld+json">
@@ -52,109 +52,204 @@
 
 <a class="skip" href="#main">דלג לתוכן</a>
 
-<div class="wrap">
+<header class="hero">
+  <canvas class="hero__sky" aria-hidden="true"></canvas>
 
-  <header class="masthead">
-    <a class="brand" href="./"><img src="assets/mark.svg" alt="" width="32" height="32">Smish</a>
+  <div class="masthead">
+    <a class="brand" href="./"><img src="assets/mark.svg" alt="" width="34" height="34">Smish</a>
     <nav aria-label="שפה">
       <a class="lang-switch" href="en/" hreflang="en" lang="en">English</a>
     </nav>
-  </header>
+  </div>
 
-  <main id="main" tabindex="-1">
-
-    <h1>לזכור את מי שחשוב לך</h1>
-    <p class="lede">ולהגיד את זה כמו שצריך — בלי האשמה של מי ששוב שכח.</p>
-
+  <div class="hero__inner">
+    <p class="hero__badge"><span class="dot" aria-hidden="true"></span>ברכות בעברית, בקול שלכם</p>
+    <h1>לזכור את מי <span class="glow">שחשוב לך</span></h1>
+    <p class="hero__lede">ולהגיד את זה כמו שצריך — בלי האשמה של מי ששוב שכח.</p>
     <div class="stores">
-      <span class="store" aria-disabled="true">Google Play — בקרוב</span>
-      <span class="store" aria-disabled="true">App Store — בקרוב</span>
+      <span class="store" aria-disabled="true">Google&nbsp;Play — בקרוב</span>
+      <span class="store" aria-disabled="true">App&nbsp;Store — בקרוב</span>
     </div>
+  </div>
+</header>
 
-    <div class="card">
-      <p>Smish עוקב אחרי ימי ההולדת, ימי הנישואין והחגים של האנשים שחשובים לכם,
-      מזכיר לכם לפני שהם מגיעים, ועוזר לכם לכתוב משהו אישי מספיק כדי שיהיה שווה לשלוח.</p>
+<main id="main" tabindex="-1">
+
+  <section class="band band--sunk">
+    <div class="band__inner showcase">
+      <div class="reveal">
+        <p class="eyebrow">איך זה נראה</p>
+        <h2 class="section-title">טיוטה שכבר נשמעת כמוכם</h2>
+        <p class="section-lede">Smish לא שולח כלום לבד. הוא מכין ניסוח שמתאים לאדם ולאירוע,
+        אתם עורכים אותו כמה שבא לכם — ורק אז לוחצים "שלח".</p>
+        <p>הברכה נכתבת בעברית או באנגלית, לפי מה שמתאים לכל איש קשר בנפרד,
+        ובסגנון שאתם בוחרים.</p>
+      </div>
+
+      <div class="phone reveal" aria-hidden="true">
+        <div class="phone__screen">
+          <div class="chat">
+            <p class="chat__day">מחר · יום ההולדת של דנה</p>
+
+            <div class="bubble bubble--them">
+              תודה רבה!! ❤️
+              <span class="bubble__meta">דנה · בשנה שעברה</span>
+            </div>
+
+            <div class="draft">
+              <p class="draft__label"><span class="spark"></span>טיוטה</p>
+              <p>דנה, מזל טוב! שתהיה לך שנה שקטה וטובה, ובעיקר שיהיה לך זמן
+              ליהנות ממנה. מתגעגע, בקרוב נשב.</p>
+              <div class="draft__actions">
+                <span class="pill">ניסוח</span>
+                <span class="pill">עריכה</span>
+                <span class="pill pill--go">שליחה</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <h2>איך זה נראה</h2>
-
-    <figure class="sample" style="margin:0">
-      <figcaption class="who">דנה · יום הולדת, עוד שלושה ימים</figcaption>
-      <p class="msg msg--he">דנה, מזל טוב! שתהיה לך שנה שקטה וטובה, ובעיקר — שיהיה לך זמן
-      ליהנות ממנה. מתגעגע, בקרוב נשב.</p>
-      <p class="meta">טיוטה בעברית · אפשר לערוך כל מילה · נשלח מוואטסאפ</p>
-    </figure>
-
-    <h2>איך זה עובד</h2>
-
-    <ol class="steps">
-      <li>
-        <span class="n" aria-hidden="true">1</span>
-        <h3>מוסיפים אנשים</h3>
-        <p>מייבאים מאנשי הקשר או מוסיפים ביד, עם התאריכים שחשובים להם —
-        יום הולדת, יום נישואין, חג, או כל אירוע אישי אחר.</p>
-      </li>
-      <li>
-        <span class="n" aria-hidden="true">2</span>
-        <h3>מקבלים תזכורת</h3>
-        <p>כמה ימים מראש, לא בבוקר של היום עצמו — כדי שיישאר זמן לחשוב מה להגיד.</p>
-      </li>
-      <li>
-        <span class="n" aria-hidden="true">3</span>
-        <h3>שולחים בקול שלכם</h3>
-        <p>Smish מכין טיוטה בעברית או באנגלית, בסגנון שבחרתם. עורכים אותה,
-        ושולחים מוואטסאפ, טלגרם או SMS.</p>
-      </li>
-    </ol>
-
-    <h2><bdi>Smish+</bdi></h2>
-    <p>Smish חינם לשימוש, עם מכסה חודשית של ברכות ומגבלה על מספר האנשים שאפשר לעקוב אחריהם.
-    <bdi>Smish+</bdi> מסיר את שתיהן. זהו מנוי מתחדש, שנגבה דרך App&nbsp;Store או Google&nbsp;Play,
-    וניתן לבטל אותו בכל רגע מהגדרות החשבון בחנות.</p>
-
-    <h2>שאלות</h2>
-
-    <div class="faq">
-      <details>
-        <summary>Smish שולח הודעות במקומי?</summary>
-        <p>לא. Smish מכין את הטקסט ופותח את וואטסאפ, טלגרם או SMS כשההודעה כבר מוכנה.
-        אתם קוראים אותה ולוחצים "שלח". שום דבר לא יוצא בלעדיכם.</p>
-      </details>
-      <details>
-        <summary>מה קורה עם אנשי הקשר שלי?</summary>
-        <p>Smish לא מעלה את פנקס הכתובות. הוא מבקש גישה כדי שתוכלו לבחור מי להוסיף,
-        ורק מי שבחרתם במפורש מגיע לשרת. אפשר גם להוסיף אנשים ידנית ולא לתת גישה בכלל.</p>
-      </details>
-      <details>
-        <summary>באילו שפות?</summary>
-        <p>הממשק בעברית ובאנגלית. הברכות עצמן נכתבות בעברית או באנגלית, לפי מה שמתאים
-        לכל איש קשר בנפרד.</p>
-      </details>
-      <details>
-        <summary>אילו אירועים Smish מכיר?</summary>
-        <p>ימי הולדת, ימי נישואין, חגים, ואירועים אישיים שאתם מגדירים בעצמכם.
-        זו לא אפליקציית ימי הולדת — היא לכל השנה.</p>
-      </details>
-      <details>
-        <summary>הברכה נכתבת על ידי AI. זה לא מרגיש מזויף?</summary>
-        <p>הטיוטה היא נקודת פתיחה, לא תוצר סופי. Smish לומד איך אתם כותבים ומייצר משהו
-        קרוב לזה — ואז אתם עורכים. רוב האנשים משנים משפט או שניים ושולחים.</p>
-      </details>
+  <section class="band">
+    <div class="band__inner">
+      <div class="reveal">
+        <p class="eyebrow">איך זה עובד</p>
+        <h2 class="section-title">שלושה שלבים, פעם בשנה לכל אדם</h2>
+      </div>
+      <ol class="steps">
+        <li class="reveal">
+          <span class="n" aria-hidden="true">1</span>
+          <h3>מוסיפים אנשים</h3>
+          <p>מייבאים מאנשי הקשר או מוסיפים ביד, עם התאריכים שחשובים להם.</p>
+        </li>
+        <li class="reveal">
+          <span class="n" aria-hidden="true">2</span>
+          <h3>מקבלים תזכורת</h3>
+          <p>כמה ימים מראש, לא בבוקר של היום עצמו — שיישאר זמן לחשוב מה להגיד.</p>
+        </li>
+        <li class="reveal">
+          <span class="n" aria-hidden="true">3</span>
+          <h3>שולחים בקול שלכם</h3>
+          <p>עורכים את הטיוטה, ושולחים מוואטסאפ, טלגרם או SMS.</p>
+        </li>
+      </ol>
     </div>
+  </section>
 
-    <h2>תמיכה</h2>
-    <p>שאלות, באגים, או כל דבר אחר:
-    <a href="mailto:moriel.veksler@gmail.com">moriel.veksler@gmail.com</a></p>
+  <section class="band band--sunk">
+    <div class="band__inner reveal">
+      <p class="eyebrow">לא רק ימי הולדת</p>
+      <h2 class="section-title">כל השנה, לא יום אחד בשנה</h2>
+      <p class="section-lede">אפליקציית ימי הולדת נזכרת בבן אדם פעם בשנה.
+      Smish מכיר את כל מה שקורה לו.</p>
+      <ul class="chips">
+        <li>ימי הולדת</li>
+        <li>ימי נישואין</li>
+        <li>ראש השנה</li>
+        <li>פסח</li>
+        <li>חנוכה</li>
+        <li>סיום לימודים</li>
+        <li>דירה חדשה</li>
+        <li>יום זיכרון פרטי</li>
+        <li>ומה שתגדירו בעצמכם</li>
+      </ul>
+    </div>
+  </section>
 
-  </main>
+  <section class="band band--night">
+    <div class="band__inner plan-band reveal">
+      <div>
+        <p class="eyebrow"><bdi>Smish+</bdi></p>
+        <h2 class="section-title">חינם עד שזה נהיה הרגל</h2>
+        <p class="section-lede">Smish חינם לשימוש, עם מכסה חודשית של ברכות ומגבלה על
+        מספר האנשים שאפשר לעקוב אחריהם.</p>
+      </div>
 
-  <footer>
+      <div class="plan">
+        <h3><bdi>Smish+</bdi></h3>
+        <p class="plan__sub">מסיר את שתי המגבלות.</p>
+        <ul>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
+            <span>ברכות בלי מכסה חודשית</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
+            <span>בלי הגבלה על מספר האנשים</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
+            <span>היסטוריית הברכות נשמרת, כדי לא לחזור על עצמכם</span>
+          </li>
+        </ul>
+        <p class="fineprint">מנוי מתחדש, שנגבה דרך App&nbsp;Store או Google&nbsp;Play.
+        המחיר מוצג באפליקציה במטבע שלכם לפני האישור, וניתן לבטל בכל רגע מהגדרות
+        החשבון בחנות.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band__inner">
+      <div class="reveal">
+        <p class="eyebrow">שאלות</p>
+        <h2 class="section-title">מה שבדרך כלל שואלים</h2>
+      </div>
+
+      <div class="faq reveal">
+        <details>
+          <summary>Smish שולח הודעות במקומי?</summary>
+          <p>לא. Smish מכין את הטקסט ופותח את וואטסאפ, טלגרם או SMS כשההודעה כבר מוכנה.
+          אתם קוראים אותה ולוחצים "שלח". שום דבר לא יוצא בלעדיכם.</p>
+        </details>
+        <details>
+          <summary>מה קורה עם אנשי הקשר שלי?</summary>
+          <p>Smish לא מעלה את פנקס הכתובות. הוא מבקש גישה כדי שתוכלו לבחור מי להוסיף,
+          ורק מי שבחרתם במפורש מגיע לשרת. אפשר גם להוסיף אנשים ידנית ולא לתת גישה בכלל.</p>
+        </details>
+        <details>
+          <summary>באילו שפות?</summary>
+          <p>הממשק בעברית ובאנגלית. הברכות עצמן נכתבות בעברית או באנגלית,
+          לפי מה שמתאים לכל איש קשר בנפרד.</p>
+        </details>
+        <details>
+          <summary>הברכה נכתבת על ידי AI. זה לא מרגיש מזויף?</summary>
+          <p>הטיוטה היא נקודת פתיחה, לא תוצר סופי. Smish לומד איך אתם כותבים ומייצר משהו
+          קרוב לזה — ואז אתם עורכים. רוב האנשים משנים משפט או שניים ושולחים.</p>
+        </details>
+        <details>
+          <summary>איפה אפשר לשאול משהו?</summary>
+          <p>במייל: <a href="mailto:moriel.veksler@gmail.com">moriel.veksler@gmail.com</a>.
+          תשובה מגיעה מאדם, לא מבוט.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--sunk closer">
+    <div class="band__inner reveal">
+      <h2 class="section-title">שיהיה מי שיזכור בשבילכם</h2>
+      <p class="section-lede">Smish עוד לא בחנויות. הוא בדרך.</p>
+      <div class="stores">
+        <span class="store" aria-disabled="true">Google&nbsp;Play — בקרוב</span>
+        <span class="store" aria-disabled="true">App&nbsp;Store — בקרוב</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
     <a href="terms.html" hreflang="en">תנאי שימוש</a>
     <a href="privacy.html" hreflang="en">מדיניות פרטיות</a>
+    <a href="mailto:moriel.veksler@gmail.com">תמיכה</a>
     <span class="spacer"><bdi dir="ltr">© 2026 Moriel Veksler</bdi></span>
-  </footer>
+  </div>
+</footer>
 
-</div>
-
+<script src="assets/site.js" defer></script>
 </body>
 </html>
