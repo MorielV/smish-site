@@ -116,11 +116,12 @@ html.js .glow {
   padding: var(--bezel);
   border-radius: 48px;
   background:
-    linear-gradient(150deg, #4A4237 0%, #221D18 28%, #17130F 62%, #3A332B 100%);
+    linear-gradient(150deg, #574E41 0%, #241F19 28%, #17130F 62%, #443C32 100%);
   box-shadow:
     var(--shadow-lg),
-    inset 0 0 0 1px rgba(243, 236, 223, .16),
-    inset 0 1px 1px rgba(243, 236, 223, .22);
+    0 0 0 1px rgba(243, 236, 223, .10),
+    inset 0 0 0 1px rgba(243, 236, 223, .20),
+    inset 0 1px 1px rgba(243, 236, 223, .30);
   transition: transform 500ms cubic-bezier(.2, .7, 0, 1);
   transform-style: preserve-3d;
 }
@@ -142,6 +143,7 @@ html.js .device:hover .device__frame { transform: translateY(-6px) rotateX(2deg)
   position: relative;
   border-radius: 37px;
   background: var(--bg);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .35);
   overflow: hidden;
   aspect-ratio: 9 / 19.5;
   display: flex;
